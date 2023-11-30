@@ -8,11 +8,18 @@ app.get('/', (req, res) =>
     availableNetworks: availableNetworks(),
   })
 );
+//contract location 0xCdc46d1e16c2Eb5832f3B69e0f8eb6993FdAF684
+//network sepolia
 
 const balance = async (network) => {
-  const result = await provider(network).getBalance(address());
+  const result = await provider(network).getBalance('0xc2f2F052eA0fd9FaB733c77A146905d25801d90A');
   return ethers.utils.formatEther(result);
 };
+
+const GetHashOf = async (address, network, contract) => 
+{
+  
+}
 
 app
   .route('/balance/:network')
